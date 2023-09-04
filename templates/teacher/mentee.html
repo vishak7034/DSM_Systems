@@ -1,0 +1,141 @@
+{% extends 'teacher/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+          <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>Student Under Guidence</h2>
+                <div class="page_link">
+                  <a href="index.html">Home</a>
+<!--                  <a href="contact.html">St</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% for p in i %}
+                                            <button style="background-color:limegreen"  ><a href="Add_assignment?id={{p.student_id}}" class=" btn btn-success" >Add Assignment</a></button>
+{% endfor %}
+           <div class="col">
+
+      <table class="container text-center ml-auto w-75">
+
+         {% for p in i %}
+        <img src="{{p.image.url}}" width="100px" height="150px"><br><br>
+        <tr>
+          <th><h6>Name</h6></th>
+          <td><h6>{{p.student.user.first_name}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Student ID</h6></th>
+          <td><h6>{{p.rollnumber}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Date of Birth</h6></th>
+          <td><h6>{{p.dob}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Age</h6></th>
+          <td><h6>{{p.age}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Blood Group</h6></th>
+          <td><h6>{{p.blood_group}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Religion</h6></th>
+          <td><h6>{{p.religion}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Caste</h6></th>
+          <td><h6>{{p.caste}}</h6></td>
+        </tr>
+
+        <tr>
+          <th><h6>Permenent Address</h6></th>
+          <td><h6>{{p.permanent_address}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Contact Address</h6></th>
+          <td></h6>{{p.contact_address}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Mobile number</h6></th>
+          <td></h6>{{p.mob_number}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Telephone</h6></th>
+          <td></h6>{{p.telephone_number}}</h6></td>
+        </tr>
+        {% endfor %}
+
+
+
+        {% for p in e %}
+        <tr>
+          <th><h6>Name of father</h6></th>
+          <td></h6>{{p.father_name}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Father Profession</h6></th>
+          <td></h6>{{p.father_profession}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Father Age</h6></th>
+          <td></h6>{{p.father_age}}</h6></td>
+        </tr>
+          <tr>
+          <th><h6>Work Place</h6></th>
+          <td></h6>{{p.work_place}}</h6></td>
+        </tr>
+         <tr>
+          <th><h6>Phone Number</h6></th>
+          <td></h6>{{p.father_number}}</h6></td>
+        </tr>
+        <tr>
+          <th></td><h6>Name of mother</h6></th>
+          <td></h6>{{p.mother_name}}</h6></td>
+        </tr>
+           <tr>
+          <th></td><h6>Mother Profession</h6></th>
+          <td></h6>{{p.mother_profession}}</h6></td>
+        </tr>
+           <tr>
+          <th></td><h6>Mother Number</h6></th>
+          <td></h6>{{p.mother_number}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Local Guardian</h6></th>
+          <td></h6>{{p.local_guardian}}</h6></td>
+        </tr>
+        <tr>
+          <th><h6>Guardian Number</h6></th>
+          <td></h6>{{p.guardian_number}}</h6></td>
+        </tr>
+
+{% endfor %}
+      </table>
+    </div>
+
+
+  
+
+  
+
+
+{% endblock  %}

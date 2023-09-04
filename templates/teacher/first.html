@@ -1,0 +1,332 @@
+
+{% extends 'teacher/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>First Impression</h2>
+                <div class="page_link">
+                  <a href="index.html">Home</a>
+<!--                  <a href="contact.html">Contact</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="contact_info">
+<!--              <div class="info_item">-->
+<!--                <i class="ti-home"></i>-->
+<!--                <h6>California, United States</h6>-->
+<!--                <p>Santa monica bullevard</p>-->
+<!--              </div>-->
+<!--              <div class="info_item">-->
+<!--                <i class="ti-headphone"></i>-->
+<!--                <h6><a href="#">00 (440) 9865 562</a></h6>-->
+<!--                <p>Mon to Fri 9am to 6 pm</p>-->
+<!--              </div>-->
+<!--              <div class="info_item">-->
+<!--                <i class="ti-email"></i>-->
+<!--                <h6><a href="#">support@colorlib.com</a></h6>-->
+<!--                <p>Send us your query anytime!</p>-->
+<!--              </div>-->
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <form
+              class="row contact_form"
+              action=""
+              method="post"
+              id="contactForm"
+              novalidate="novalidate"
+            >
+               {% csrf_token %}
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>First impression about mentee</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="f" value="{{e.first_impression}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter your name'"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                    <label>Source of Income</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="s" value="{{e.sourceof_income}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                    <label>Economic and Ethical Background</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    name="e" value="{{e.background}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter Place'"
+                    required=""
+                  />
+                </div>
+                  <div class="form-group">
+                    <label>Parental Harmony</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="p" value="{{e.parental_harmony}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                  <div class="form-group">
+                    <label>Relationship with Parents and Siblings</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="r" value="{{e.relationship}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                  <div class="form-group">
+                    <label>Atmosphere at home for study</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="a" value="{{e.atmosphere}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Attitude towards morality (religious life)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="at" value="{{e.morality}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Social Outlook</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="so" value="{{e.social_outlook}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Reading Habit</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="re" value="{{e.rd_habit}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Behaviour of Mentee</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email" value="{{e.behaviour}}"
+                    name="beha"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Skills</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="sk" value="{{e.skills}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Weakness</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="we" value="{{e.weakness}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Adjustment to class/college/hostel</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="ad" value="{{e.adjustment}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Addiction</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="add" value="{{e.addiction}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Improvement Areas</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="im" value="{{e.improvement}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Specific Concern</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="sp" value="{{e.concern}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Referral to language lab</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="rl" value="{{e.language_lab}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Fitness for MCA (yes or no, and comments)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="mca" value="{{e.fitness_for_mca}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Life Goals</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="life" value="{{e.life_goals}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                    <div class="form-group">
+                    <label>Core Competency</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="core" value="{{e.competency}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+                   <div class="form-group">
+                    <label>Inter college representations (sports/arts or anything)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="inter" value="{{e.representations}}"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'"
+                    required=""
+                  />
+                </div>
+              </div>
+
+<!--              <div class="col-md-12 ">-->
+<!--                <button type="submit" value="submit" class="btn primary-btn">-->
+<!--                  Submit-->
+<!--                  </button>-->
+<!--              </div>-->
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

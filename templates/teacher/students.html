@@ -1,0 +1,62 @@
+{% extends 'teacher/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+          <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>Student Under Guidence</h2>
+                <div class="page_link">
+                  <a href="index.html">Home</a>
+<!--                  <a href="contact.html">St</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+            <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+
+                                 <th class="success" style="color: white;">Student Name</th>
+
+                                <th class="success" style="color: white;">Student Details</th>
+
+                                <th class="success" style="color: white;">Counselling History</th>
+                                <th class="success" style="color: white;">Counselling Booking </th>
+
+              {% for i in view_pr %}
+                                <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.student.user.first_name }}</td>
+                                    <td><button style="background-color:limegreen"><a href="student_profile?id={{ i.student_id}}" class=" btn btn-success" >View</a></button></td>
+
+                                    <td><button style="background-color:limegreen"><a href="History?id={{ i.student_id}}" class=" btn btn-success" >View</a></button></td>
+                                    <td><button style="background-color:limegreen"><a href="date?id={{ i.student_id}}" class=" btn btn-success" >Book</a></button></td>
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+{% endblock %}

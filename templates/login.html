@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+ <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>Login</h2>
+                <div class="page_link">
+                  <a href="index.html">Home</a>
+                  <a href="contact.html">Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END nav -->
+    <div class="section_gap registration_area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="row clock_sec clockdiv" id="clockdiv">
+              <div class="col-lg-12">
+                <h1 class="mb-3">Register Now</h1>
+
+              </div>
+              <div >
+<!--                <h1 class="days">150</h1>-->
+<!--                <span class="smalltext">Days</span>-->
+              </div>
+              <div >
+<!--                <h1 class="hours">23</h1>-->
+<!--                <span class="smalltext">Hours</span>-->
+              </div>
+              <div >
+<!--                <h1 class="minutes">47</h1>-->
+<!--                <span class="smalltext">Mins</span>-->
+              </div>
+              <div >
+<!--                <h1 class="seconds">59</h1>-->
+<!--                <span class="smalltext">Secs</span>-->
+              </div >
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <div class="register_form">
+              <h3>Login</h3>
+<!--              <p>It is high time for learning</p>-->
+              <form
+                class="form_area"
+                action=""
+                method="post"
+              >
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-12 form_group">
+                    <input
+                      name="email"
+                      placeholder="Email"
+                      required=""
+                      type="email"
+                    />
+
+                    <input
+                      name="password"
+                      placeholder="Password"
+                      required=""
+                      type="password"
+                    />
+                  </div>
+                  <div class="col-lg-12 text-center">
+ <button type="submit" value="submit" class="btn primary-btn">
+                Login
+                </button>                  </div>
+                </div>
+                                                                                                <p>Don't have an Account <a href="Student_Reg" style="color:#FF0000;">Sign Up</a></p>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

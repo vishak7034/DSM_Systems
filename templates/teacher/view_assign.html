@@ -1,0 +1,69 @@
+{% extends 'teacher/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+          <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>Student Under Guidence</h2>
+                <div class="page_link">
+                  <a href="index.html">Home</a>
+<!--                  <a href="contact.html">St</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+            <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+
+                                 <th class="success" style="color: white;">Student Name</th>
+                                <th class="success" style="color: white;">Description</th>
+
+                                <th class="success" style="color: white;">Submission Date</th>
+
+                                <th class="success" style="color: white;">Assignment</th>
+                                <th class="success" style="color: white;">Add Feedback</th>
+
+              {% for i in view_pr %}
+                                <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.student.user.first_name }}</td>
+                                  <td>{{i.assignment_description}}</td>
+                        <td>{{i.submission_date}}</td>
+     <td><a href="{{ i.image.url }}" >Assignment</a> </td>
+
+
+     <form action="" method="post"  >
+        {% csrf_token %}
+
+    <td><textarea name="feed" placeholder="feedback"></textarea>
+          <input type="hidden" name="id" value="{{ i.id }}"><button type="submit">Send</button></td>
+</form>
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+{% endblock %}
